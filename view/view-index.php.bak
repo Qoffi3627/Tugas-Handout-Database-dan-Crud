@@ -1,0 +1,21 @@
+<table>
+    <tr>
+        <td>Email</td>
+        <td>Nama</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <?php foreach($daftarPeserta as $peserta) { ?>
+    <tr>
+        <td><?= $peserta->getEmail() ?></td>
+        <td><?= $peserta->getNama() ?></td>
+        <td><a href="ubah.php?email=<?= $peserta->getEmail() ?>">Ubah</a></td>
+        <td>
+            <form action="hapus.php" method="post">
+                <input type="hidden" name="email" value="<?= $peserta->getEmail() ?>">
+                <input type="submit" value="Hapus">
+            </form>
+        </td>
+    </tr>
+    <?php } ?>
+</table>
